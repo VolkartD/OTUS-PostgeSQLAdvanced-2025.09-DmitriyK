@@ -48,7 +48,7 @@
     insert into shipments(product_name, quantity, destination) values('sugar', 600, 'Africa');
     insert into shipments(product_name, quantity, destination) values('sugar', 400, 'USA');
     ```
-14. Подключаемся к контейнеру с БД с ПК, использовал DBeaver.
+14. Подключаемся к контейнеру с БД с ПК, использовал DBeaver. ![14](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_2.Docker%20и%20PostgreSQL/screenshots/14.png?raw=true)
 15. Удаляем контейнер с БД, создаем его заново.
         ```
         sudo docker rm -f postgres
@@ -61,3 +61,4 @@
         \dt
         SELECT * FROM shipments;
         ```
+![16](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_2.Docker%20и%20PostgreSQL/screenshots/16.png?raw=true)
