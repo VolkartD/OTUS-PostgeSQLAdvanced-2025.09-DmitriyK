@@ -1,4 +1,4 @@
-# Настройка PostgreSQL
+# Спасение данных на внешнем диске, настойка PostgreSQL
 1. Установка и настройка виртуальной машины.
 2. Установка PostgreSQL.
 	`sudo apt-get install postresql -y`
