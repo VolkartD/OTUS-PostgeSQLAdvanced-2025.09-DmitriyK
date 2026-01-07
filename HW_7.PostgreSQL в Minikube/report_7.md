@@ -33,7 +33,7 @@
 
    `sudo nano postgres-secret.yaml`
    
-   ![4](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_7.PostgreSQL%20в%20Minikube/screenshots/Screenshot%202026-01-07%20185000.png?raw=true)
+   ![4](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_7.PostgreSQL%20в%20Minikube/screenshots/Screenshot%202026-01-07%20185016.png?raw=true)
 
    `sudo nano postgres-service.yaml`
    
