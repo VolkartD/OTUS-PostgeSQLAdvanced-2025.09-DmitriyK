@@ -2,18 +2,25 @@
 1. Выбираем два облака для сравнения. YandexCloud и SberCloud.
 2. Регистрируемся.
 3. Создаем managed PostgreSQL YandexCloud.
+   
    3.1. Добавлем новое облако для проекта в организации.
+   
    ![1](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_9.Выбор%20облака/screenshots/Screenshot%202026-01-15%20070154.png?raw=true)
    
    3.2. Идем во "все сервисы" находим Managed Service for PostgreSQL, создаем кластер.
+   
    ![2](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_9.Выбор%20облака/screenshots/Screenshot%202026-01-15%20070311.png?raw=true)
+   
    3.3. Настраиваем необходимые параметры кластера.
+   
    ![3](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_9.Выбор%20облака/screenshots/Screenshot%202026-01-15%20070414.png?raw=true)
+   
    3.4. Фиксируем стоимость.
    
    ![4](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/HW_9.Выбор%20облака/screenshots/Screenshot%202026-01-15%20070810.png?raw=true)
    
    3.5. Создаем.
+   
 5. Создаем managed PostgreSQL в SberCloud.
    
    4.1. В Сервисах выбираем managed PostgreSQL.
