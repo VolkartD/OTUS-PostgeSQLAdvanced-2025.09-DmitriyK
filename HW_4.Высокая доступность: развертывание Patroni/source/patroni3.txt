@@ -1,0 +1,60 @@
+scope: pg-cluster2
+namespace: /db/
+name: pg01
+
+restapi:
+  listen: 0.0.0.0:8008
+  connect_address: 192.168.10.138:8008
+
+etcd3:
+  hosts: 192.168.10.141:2379,192.168.10.124:2379,192.168.10.140:2379
+
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_pg_rewind: true
+      parameters:
+        wal_level: replica
+        hot_standby: "on"
+        max_wal_senders: 10
+        max_replication_slots: 10
+        wal_keep_size: 256MB
+
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+
+  pg_hba:
+    - host  all  all  0.0.0.0/0  md5
+    - host  replication  all  0.0.0.0/0  md5
+
+  users:
+    admin:
+      password: adminpass
+      options:
+        - createrole
+        - createdb
+
+postgresql:
+  listen: 0.0.0.0:5432
+  connect_address: 192.168.10.138:5432
+  data_dir: /var/lib/postgresql/16/data/cluster
+  bin_dir: /usr/lib/postgresql/16/bin
+  authentication:
+    replication:
+      username: replicator
+      password: replpass
+    superuser:
+      username: postgres
+      password: postgrespass
+
+
+
+
+
+
+
