@@ -1,0 +1,18 @@
+#!/bin/bash
+
+date
+
+sudo rm -f -v /backups/demo_*.dump
+
+NOW=$ (date -I)
+FILE_demo="demo_.$NOW.dump"
+
+
+date
+echo "Backuping DB start, please wait..."
+
+PGPASSWORD=postgrespass
+pg_dump -U postgres -h 192.168.10.150 -p 5000 -d demo -F c -f /backups/FILE_demo
+
+echo "Backuping DB end"
+date

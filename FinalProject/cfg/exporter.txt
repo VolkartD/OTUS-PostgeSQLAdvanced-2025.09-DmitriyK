@@ -1,0 +1,17 @@
+DATA_SOURCE_NAME="postgresql://exporter:exporterpass@localhost:5432/postgres?sslmode=disable"
+
+
+
+ini
+[Unit]
+Description=PostgreSQL Exporter
+After=network.target
+
+[Service]
+User=postgres_exporter
+EnvironmentFile=/etc/postgres_exporter.env
+ExecStart=/usr/local/bin/postgres_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
