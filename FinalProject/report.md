@@ -1,6 +1,6 @@
 # Построение отказоустойчивого кластера патрони: PostgreSQL, Patroni, распределенное хранилище (ETCD), балансировщик (HaProxy), мониторинг (Prometheus), резервирование.
 
-1. Разворачиваем ВМ: 3 Patroni, 3 etcd, 1 Haproxy, 1 Prometheus.
+1. Разворачиваем ВМ: 3 Patroni, 3 etcd, 2 Haproxy, 1 Prometheus.
 2. Обновляем и устанавливаем необходимые пакеты для дальнейшей работы:
    ```
    sudo apt-get update -y && sudo apt-get upgrade -y
@@ -231,3 +231,23 @@
    
    7.5. Проверяем.
    ![8](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/FinalProject/screenshots/расписание%20и%20бекап.png)
+
+8. keepalived.
+   
+   8.1. Устанавливаем на хосты haproxy и haproxy-2 keepalived:
+   
+   	`sudo apt install -y keepalived`
+
+   8.2. Настраиваем конфиг, запускаем:
+
+   ```
+   sudo nano /etc/keepalived/keepalived.conf
+   systemctl enable --now haproxy
+   systemctl enable --now keepalived
+   ```
+[keepalived_cfg](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/FinalProject/cfg/keepalived_cfg.txt "Конфиг 2-ъ хостов")
+   8.3. Проверяем, отключая мастер хост с VIP.
+   мастер haproxy
+![11](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/FinalProject/screenshots/Screenshot%202026-03-09%20133806.png)
+   отключаем haproxy мастером становится haroxy-2
+   ![12](https://github.com/VolkartD/OTUS-PostgeSQLAdvanced-2025.09-DmitriyK/blob/main/FinalProject/screenshots/Screenshot%202026-03-09%20134258.png)
